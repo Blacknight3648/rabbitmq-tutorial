@@ -1,0 +1,22 @@
+# Backend Spring Boot
+rabbitmq-tutorials/target/
+**/target/
+.mvn/wrapper/maven-wrapper.jar
+
+# Frontend Node / Vite
+**/node_modules/
+**/dist/
+**/dist-ssr/
+*.local
+
+# IDEs & System
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
+.settings/
+.project
+.classpath
+.DS_Store
+Thumbs.db

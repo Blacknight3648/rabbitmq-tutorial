@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: rabbitmq-tutorials
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+    listener:
+      simple:
+        acknowledge-mode: manual
+        prefetch: 1
+        retry:
+          enabled: true
+          initial-interval: 1000 #1 segundo
+          max-interval: 10000 #10 seg
+          multiplier: 2.0 # Duplica cada intento
+          max-retries: 2 # 2 reintentos adicionales = 3 intentos totales
+    virtual-host: /
+    amqp:
+      template:
+        retry:
+          enabled: true
+          initial-interval: 1000ms
+          max-interval: 60000ms
+          multiplier: 2.0
+
+server:
+  port: 8080
